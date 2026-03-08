@@ -26,7 +26,9 @@ It allows users to:
 
 The system includes JWT authentication, interactive dashboards, modern UI, and real-time updates.
 
+
 ✨ Key Features
+
 🔐 Authentication
 
 Secure User Registration & Login
@@ -36,6 +38,7 @@ JWT-based authentication
 Password encryption using bcrypt
 
 Session management
+
 
 👥 Lead Management
 
@@ -57,6 +60,8 @@ Website Inquiry	+20
 High Budget	+50
 Referral Source	+15
 Lead Status	+5–20
+
+
 💼 Client Management
 
 Convert leads → clients
@@ -66,6 +71,7 @@ Track project revenue
 Assign account managers
 
 Monitor client status
+
 
 📊 Sales Pipeline
 
@@ -85,6 +91,7 @@ Won / Lost
 
 Supports drag and drop lead movement.
 
+
 📅 Follow-Up System
 
 Schedule follow-ups
@@ -94,6 +101,7 @@ Track completion
 Overdue notifications
 
 Link follow-ups with leads or clients
+
 
 📈 Analytics Dashboard
 
@@ -116,9 +124,13 @@ Average Lead Score
 Charts included:
 
 📊 Lead distribution (Pie Chart)
+
 📈 Monthly lead growth (Line Chart)
+
 📊 Leads per month (Bar Chart)
+
 📈 Revenue analytics (Line Chart)
+
 
 🎨 UI Features
 
@@ -133,6 +145,7 @@ Smooth animations
 Real-time updates
 
 Search & filtering
+
 
 🛠️ Tech Stack
 Frontend
@@ -167,7 +180,9 @@ dotenv configuration
 
 CORS protection
 
-📂 Project Structure
+
+##📂 Project Structure
+
 Task-2
 │
 ├── server
