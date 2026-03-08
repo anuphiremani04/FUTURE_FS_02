@@ -13,10 +13,15 @@ Mini CRM provides a centralized platform for businesses to manage customer relat
 It allows users to:
 
 ✔ Track and manage sales leads
+
 ✔ Convert leads into active clients
+
 ✔ Monitor sales pipelines
+
 ✔ Schedule follow-ups and tasks
+
 ✔ Visualize business analytics
+
 ✔ Track revenue and conversion rates
 
 The system includes JWT authentication, interactive dashboards, modern UI, and real-time updates.
