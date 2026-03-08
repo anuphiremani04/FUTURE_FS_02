@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM System - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="animated-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+
+        <div class="login-card">
+            <div class="login-header">
+                <div class="login-logo">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h1>CRM System</h1>
+                <p>Professional Lead Management System</p>
+            </div>
+
+            <div class="auth-toggle" role="tablist" aria-label="Authentication Mode">
+                <button type="button" class="auth-toggle-btn active" id="showLoginBtn">Sign In</button>
+                <button type="button" class="auth-toggle-btn" id="showRegisterBtn">Register</button>
+            </div>
+
+            <div id="authFormsWrap" class="auth-forms-wrap">
+            <form id="loginForm" class="login-form auth-panel active">
+                <div class="form-group">
+                    <input 
+                        type="email" 
+                        id="loginEmail" 
+                        class="form-input" 
+                        placeholder=" "
+                        required
+                    >
+                    <label class="floating-label">Email Address</label>
+                    <div class="error-message" id="loginEmailError"></div>
+                </div>
+
+                <div class="form-group">
+                    <input 
+                        type="password" 
+                        id="loginPassword" 
+                        class="form-input" 
+                        placeholder=" "
+                        required
+                    >
+                    <label class="floating-label">Password</label>
+                    <div class="error-message" id="loginPasswordError"></div>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+
+                <div class="error-message" id="loginFormError" style="text-align: center;"></div>
+            </form>
+
+            <form id="registerForm" class="login-form auth-panel" novalidate>
+                <div class="form-group">
+                    <input
+                        type="text"
+                        id="registerName"
+                        class="form-input"
+                        placeholder=" "
+                        required
+                    >
+                    <label class="floating-label">Full Name</label>
+                    <div class="error-message" id="registerNameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        class="form-input"
+                        placeholder=" "
+                        required
+                    >
+                    <label class="floating-label">Email Address</label>
+                    <div class="error-message" id="registerEmailError"></div>
+                </div>
+
+                <div class="form-group">
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        class="form-input"
+                        placeholder=" "
+                        required
+                    >
+                    <label class="floating-label">Password</label>
+                    <div class="error-message" id="registerPasswordError"></div>
+                </div>
+
+                <div class="form-group">
+                    <input
+                        type="password"
+                        id="registerConfirmPassword"
+                        class="form-input"
+                        placeholder=" "
+                        required
+                    >
+                    <label class="floating-label">Confirm Password</label>
+                    <div class="error-message" id="registerConfirmPasswordError"></div>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+
+                <div class="error-message" id="registerFormError" style="text-align: center;"></div>
+            </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/storage.js?v=20260307i"></script>
+    <script src="js/app.js?v=20260307i"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(120) NOT NULL,
+  email VARCHAR(180) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  role VARCHAR(50) NOT NULL DEFAULT 'sales',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS leads (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  lead_name VARCHAR(150) NOT NULL,
+  company_name VARCHAR(180) NOT NULL,
+  email VARCHAR(180) NOT NULL,
+  phone VARCHAR(40),
+  source VARCHAR(80) DEFAULT 'Website',
+  status VARCHAR(80) DEFAULT 'New',
+  lead_score INT DEFAULT 0,
+  budget DECIMAL(12,2) DEFAULT 0,
+  notes TEXT,
+  pipeline_stage VARCHAR(80) DEFAULT 'New Lead',
+  salesperson VARCHAR(120) DEFAULT 'Unassigned',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS clients (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  client_name VARCHAR(150) NOT NULL,
+  company_name VARCHAR(180) NOT NULL,
+  email VARCHAR(180) NOT NULL,
+  phone VARCHAR(40),
+  project_value DECIMAL(12,2) DEFAULT 0,
+  status VARCHAR(80) DEFAULT 'Active',
+  assigned_manager VARCHAR(120),
+  notes TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS followups (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  lead_id INT NULL,
+  followup_date DATE NOT NULL,
+  notes TEXT,
+  status VARCHAR(80) DEFAULT 'Pending',
+  title VARCHAR(180),
+  related_to VARCHAR(180),
+  completed TINYINT(1) DEFAULT 0,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS sales (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  client_id INT NOT NULL,
+  revenue_amount DECIMAL(12,2) DEFAULT 0,
+  deal_status VARCHAR(80) DEFAULT 'Closed Won',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
