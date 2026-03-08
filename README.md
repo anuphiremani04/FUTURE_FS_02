@@ -1,8 +1,8 @@
-# FUTURE_FS_02
+## FUTURE_FS_02
 
 🚀 Mini CRM – Client Lead Management System
 
-A full-stack Customer Relationship Management (CRM) system built with Node.js, Express, MySQL, and Vanilla JavaScript.
+A full-stack Customer Relationship Management (CRM) system built using Node.js, Express, MySQL, and Vanilla JavaScript.
 
 This application helps businesses manage leads, clients, sales pipelines, follow-ups, and analytics through an intuitive dashboard interface.
 
@@ -24,11 +24,17 @@ It allows users to:
 
 ✔ Track revenue and conversion rates
 
-The system includes JWT authentication, interactive dashboards, modern UI, and real-time updates.
+The system includes:
 
+JWT authentication
+
+Interactive dashboards
+
+Modern UI
+
+Real-time updates
 
 ✨ Key Features
-
 🔐 Authentication
 
 Secure User Registration & Login
@@ -38,7 +44,6 @@ JWT-based authentication
 Password encryption using bcrypt
 
 Session management
-
 
 👥 Lead Management
 
@@ -52,16 +57,13 @@ Export leads to CSV
 
 Track lead sources
 
-Lead Score is calculated based on:
-
+Lead Score Calculation
 Factor	Score
 Corporate Email	+30
 Website Inquiry	+20
 High Budget	+50
 Referral Source	+15
 Lead Status	+5–20
-
-
 💼 Client Management
 
 Convert leads → clients
@@ -72,10 +74,9 @@ Assign account managers
 
 Monitor client status
 
-
 📊 Sales Pipeline
 
-Kanban style board with stages:
+Kanban-style board with stages:
 
 New Lead
 
@@ -91,7 +92,6 @@ Won / Lost
 
 Supports drag and drop lead movement.
 
-
 📅 Follow-Up System
 
 Schedule follow-ups
@@ -102,12 +102,11 @@ Overdue notifications
 
 Link follow-ups with leads or clients
 
-
 📈 Analytics Dashboard
 
 Interactive charts powered by Chart.js
 
-Metrics include:
+Metrics
 
 Total Leads
 
@@ -121,7 +120,7 @@ Conversion Rate
 
 Average Lead Score
 
-Charts included:
+Charts
 
 📊 Lead distribution (Pie Chart)
 
@@ -130,7 +129,6 @@ Charts included:
 📊 Leads per month (Bar Chart)
 
 📈 Revenue analytics (Line Chart)
-
 
 🎨 UI Features
 
@@ -145,7 +143,6 @@ Smooth animations
 Real-time updates
 
 Search & filtering
-
 
 🛠️ Tech Stack
 Frontend
@@ -180,9 +177,9 @@ dotenv configuration
 
 CORS protection
 
+## 📂 Project Structure
 
-##📂 Project Structure
-
+```
 Task-2
 │
 ├── server
@@ -232,3 +229,4 @@ Task-2
 ├── .env.example
 ├── start-server.bat
 └── view-database.bat
+```
