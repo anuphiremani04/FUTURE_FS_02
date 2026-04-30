@@ -17,9 +17,7 @@ const pool = mysql.createPool({
   waitForConnections: true,
   connectionLimit: process.env.NODE_ENV === 'production' ? 5 : 10,
   queueLimit: 0,
-  enableKeepAlive: true,
-  keepAliveInitialDelayMs: 0,
-  connectTimeout: 10000
+  enableKeepAlive: true
 });
 
 async function ensureDatabaseExists() {
