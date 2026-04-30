@@ -4,7 +4,11 @@
 
 class StorageManager {
     constructor() {
-        this.apiBase = window.location.origin.includes('5000') ? '/api' : 'http://localhost:5000/api';
+        const isLocalDevelopment =
+            window.location.protocol === 'file:' ||
+            ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+
+        this.apiBase = isLocalDevelopment ? 'http://localhost:5000/api' : `${window.location.origin}/api`;
         this.token = localStorage.getItem('authToken') || '';
         this.currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
 

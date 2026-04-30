@@ -212,3 +212,62 @@ Task-2
 ├── .env.example
 ├── start-server.bat
 └── view-database.bat
+
+---
+
+## 🚀 Deployment Guide
+
+### Deploying to Render
+
+**Step 1: Set Up External MySQL Database**
+
+Since Render doesn't provide MySQL directly, use one of these free tier options:
+
+- **TiDB Cloud** (Recommended) - https://tidbcloud.com
+  - Sign up and create a free Serverless cluster
+  - Get connection details: host, port, username, password
+
+**Step 2: Connect GitHub Repository**
+
+1. Push your code to GitHub
+2. Visit [render.com](https://render.com)
+3. Click "New +" → "Web Service"
+4. Connect your GitHub repository
+5. Configure:
+   - **Name**: `mini-crm`
+   - **Environment**: `Node`
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+   - **Plan**: Free (or Paid)
+
+**Step 3: Set Environment Variables**
+
+In Render Dashboard, go to your service → Environment and add:
+
+```
+NODE_ENV=production
+JWT_SECRET=your_secure_random_secret_key_32_chars_minimum
+JWT_EXPIRES_IN=7d
+DB_HOST=your_tidb_host.c.tidb.cloud
+DB_PORT=4000
+DB_USER=your_tidb_username
+DB_PASSWORD=your_tidb_password
+DB_NAME=mini_crm
+FRONTEND_ORIGIN=https://your-app-name.onrender.com
+```
+
+**Step 4: Deploy**
+
+1. Click "Deploy" in Render dashboard
+2. Monitor logs for deployment status
+3. Once deployed, visit: `https://your-app-name.onrender.com`
+4. Test health check: `https://your-app-name.onrender.com/api/health`
+
+**Important Notes:**
+
+- Free tier services spin down after 15 minutes of inactivity
+- Render provides automatic HTTPS
+- Update `FRONTEND_ORIGIN` with your Render app URL
+- Keep `JWT_SECRET` secure and different from development
+
+See [RENDER_DEPLOYMENT.md](./RENDER_DEPLOYMENT.md) for detailed troubleshooting.

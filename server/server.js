@@ -16,12 +16,15 @@ const analyticsRoutes = require('./routes/analyticsRoutes');
 const app = express();
 const port = Number(process.env.PORT || 5000);
 
+const corsOrigins = process.env.FRONTEND_ORIGIN
+  ? [process.env.FRONTEND_ORIGIN, 'http://localhost:5000', 'http://127.0.0.1:5000']
+  : '*';
+
 app.use(
   cors({
-    origin: process.env.FRONTEND_ORIGIN
-      ? [process.env.FRONTEND_ORIGIN, 'http://localhost:5000', 'http://127.0.0.1:5000']
-      : true,
-    credentials: true
+    origin: corsOrigins,
+    credentials: true,
+    optionsSuccessStatus: 200
   })
 );
 app.use(express.json());
@@ -46,11 +49,14 @@ app.use(errorHandler);
 
 initializeDatabase()
   .then(() => {
-    app.listen(port, () => {
-      console.log(`CRM backend running on http://localhost:${port}`);
+    app.listen(port, '0.0.0.0', () => {
+      const url = process.env.NODE_ENV === 'production'
+        ? `App running on port ${port}`
+        : `CRM backend running on http://localhost:${port}`;
+      console.log(`✓ ${url}`);
     });
   })
   .catch((error) => {
-    console.error('Database initialization failed:', error.message);
+    console.error('❌ Database initialization failed:', error.message);
     process.exit(1);
   });
